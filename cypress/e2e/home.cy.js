@@ -5,7 +5,6 @@ import recommendationBody from "./factories/recommendationFactory";
 describe("Home page tests", () => {
     it("should register a recommendation successfully", () => {
         const body = recommendationBody();
-        cy.handleCreateRecommendation
         cy.visit("http://localhost:3000/");
         cy.get("input").first().type(body.name);
         cy.get("input").last().type(body.youtubeLink);
