@@ -1,8 +1,6 @@
-import { faker } from '@faker-js/faker';
-
 export default function recommendationBody() {
     const body = {
-        name: faker.music.songName(),
+        name: "Meu Deus, Meu Senhor, Me ajuda!",
         youtubeLink: "https://www.youtube.com/watch?v=mM0tiwgtoCw",
     };
     return body;

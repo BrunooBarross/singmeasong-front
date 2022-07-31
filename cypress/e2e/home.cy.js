@@ -31,4 +31,13 @@ describe("Home page tests", () => {
         cy.get("#root article:first div:last").should("have.text", "0");
         cy.end();
     });
+
+    it("remove recommendation if downvote lower -5", () =>{
+        cy.contains("Meu Deus, Meu Senhor, Me ajuda!");
+        for(let i = 0; i < 6; i++){
+            cy.get("#root article:first div:last svg:last").click();
+        }
+        cy.contains("Meu Deus, Meu Senhor, Me ajuda!").should('not.exist');
+        cy.end();
+    });
 });  
