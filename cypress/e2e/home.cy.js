@@ -17,6 +17,17 @@ describe("Home page tests", () => {
         cy.end();
     });
 
+    it("should display an alert if a recommendation with the same title already exists", () => {
+        const body = recommendationBody();
+        cy.get("input").first().type(body.name);
+        cy.get("input").last().type(body.youtubeLink);
+        cy.get("Button").first().click();
+        cy.on("window:alert", (text) => {
+            expect(text).to.contains("Error creating recommendation!");
+          });
+        cy.end();
+    });
+
     it("upvote recommendation test", () =>{
         cy.get("#root article:first div:last").should("have.text", "0");
         cy.get("#root article:first div:last svg:first").click();
