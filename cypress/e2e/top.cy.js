@@ -4,7 +4,7 @@ describe("Top page tests", () => {
         cy.contains("Top").click();
         cy.get("article").then(($recommendations) => {
             expect($recommendations).to.have.length.of.at.most(10);
-          });
+        });
         cy.end();
     });
 
